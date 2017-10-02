@@ -23,7 +23,7 @@ class CommentController extends Controller
     	$post->comment = $insert->comment;
     	$post->post_id = $insert->post_id;
     	$post->save();
-    	return redirect()->route('home');
+    	return back();
 
     }
 

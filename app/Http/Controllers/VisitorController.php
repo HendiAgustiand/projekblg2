@@ -17,10 +17,13 @@ class VisitorController extends Controller
      */
     public function index()
     {
-
+        return view('auth/login');
+    }
+    public function news(){
         $post = Post::paginate(10);
         return view('welcome')->with('post',$post);
     }
+    
     Public function showComment(){
         $post = comment::all();
         return view('welcome')->with('post',$post);
@@ -92,10 +95,15 @@ class VisitorController extends Controller
     {
         //
     }
+    function delete($id){
+        $post = comment::find($id)->delete();
+        return back();
+    }
 
     public function showPage($id)
     {
+        $post = comment::all();
         $data = Post::find($id);
-        return view('single')->with('data', $data);
+        return view('single')->with('data', $data)->with('post',$post);
     }
 }

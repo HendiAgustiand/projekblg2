@@ -41,7 +41,7 @@
                                               <small>{{$posts->nama}}</small>
                                          </td>
                                          <td class="col-md-3" style="vertical-align: middle; text-align:right">
-                                            <a href="{{ url('admin/post',[ $posts->id]) }}" class="btn btn-default"> <li class="fa fa-search"></li> Preview</a>
+                                            <a href="{{ url('admin/news') }}" class="btn btn-default"> <li class="fa fa-search"></li> Preview</a>
                                          </td>
                                      </tr> 
                                     @endforeach

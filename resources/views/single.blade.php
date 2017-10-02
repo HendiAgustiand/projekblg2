@@ -45,29 +45,29 @@
       <form method="POST" action="{{ route('comment.add') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
-          <input type="text" name="nama" class="form-control" placeholder="Masukan Nama">
+          <input type="text" name="nama" class="form-control" placeholder="Enter Name">
         </div>
         <div class="form-group">
-          <textarea class="form-control" name="comment" rows="3"></textarea>
-        </div>
+          <textarea class="form-control" name="comment" rows="3" placeholder="Enter Your Comments"></textarea>
+        </div>        
         <div class="form-group">
-          <input type="text" name="post_id" class="form-control" placeholder="Masukan PostID">
+          <input type="text" name="post_id" class="form-control" placeholder="Enter PostId">
         </div>
-        
         <button type="button" class="btn btn-danger" onclick="self.history.back();">Back</button>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
   </div>
-
-  <!-- Single Comment -->
+ @foreach($post as $posts)
   <div class="media mb-4">
     <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
     <div class="media-body">
-      <h5 class="mt-0">Commenter Name</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+      <h5 class="mt-0">{{ $posts->nama }}</h5>
+      <p>{{ $posts->comment }}</p>
+      <small><a href="{{ url('/post/delete',$posts->id) }}">Hapus</a></small>
     </div>
   </div>
+  @endforeach
 </div>
 
 </div>

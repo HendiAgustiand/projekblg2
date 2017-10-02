@@ -13,18 +13,19 @@
 
 Route::resource('/', 'VisitorController');
 
-Route::get('/post/{id}', 'VisitorController@showPage');
+Route::get('/post/{idku}', 'VisitorController@showPage');
+Route::get('/post/delete/{id}', 'VisitorController@delete')->name('post.delete');
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
 	Route::resource('/post','PostController');
 	Route::post('/delete','PostController@destroyall');
 	Route::get('/home', 'HomeController@index')->name('home');
-	//Route::get('/comment','CommentController@index');
 	Route::post('/comment','CommentController@addComment')->name('comment.add');
 	Route::get('/comment/showComment','CommentController@showComment');
 	Route::post('/comment/delete','CommentController@destroyall1');
 	Route::get('/readMore/showComment','CommentController@showComment')->name('readmore');
+	Route::get('/news', 'VisitorController@news');
 });
 
 
