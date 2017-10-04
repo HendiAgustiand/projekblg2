@@ -102,8 +102,10 @@ class VisitorController extends Controller
 
     public function showPage($id)
     {
-        $post = comment::all();
+        $post = DB::table('posts')->join('comments','posts.id','=','comments.post_id')->select('comments.id','comments.nama','comments.comment')->get();
+       dd($post);
+        //$post = comment::all();
         $data = Post::find($id);
-        return view('single')->with('data', $data)->with('post',$post);
+        return view('single')->with('data', $data)->with('post',$post)->with('user',\AUTH::user());
     }
 }

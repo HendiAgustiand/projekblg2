@@ -38,7 +38,7 @@
                                          </td>
                                          <td class="col-md-8">
                                              <p>{{$posts->nama}}</p>
-                                              <small>{{$posts->nama}}</small>
+                                              <small>{{$posts->comment}}</small>
                                          </td>
                                          <td class="col-md-3" style="vertical-align: middle; text-align:right">
                                             <a href="{{ url('admin/news') }}" class="btn btn-default"> <li class="fa fa-search"></li> Preview</a>

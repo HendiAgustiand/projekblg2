@@ -13,7 +13,7 @@
 
 Route::resource('/', 'VisitorController');
 
-Route::get('/post/{idku}', 'VisitorController@showPage');
+Route::get('/post/{id2}', 'VisitorController@showPage');
 Route::get('/post/delete/{id}', 'VisitorController@delete')->name('post.delete');
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()

@@ -8,8 +8,6 @@
 
 @section('content')
 <!-- Post Content Column -->
-<div class="clearfix"></div>
-
 <div class="col-md-8 col-sm-8 col-xs-8" style="font-size: larger;">
 
   <!-- Title -->
@@ -45,13 +43,13 @@
       <form method="POST" action="{{ route('comment.add') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
-          <input type="text" name="nama" class="form-control" placeholder="Enter Name">
+          <input type="hidden" name="nama" class="form-control" placeholder="Enter Name" value="{{ ucfirst($user->name) }}">
         </div>
         <div class="form-group">
           <textarea class="form-control" name="comment" rows="3" placeholder="Enter Your Comments"></textarea>
         </div>        
         <div class="form-group">
-          <input type="text" name="post_id" class="form-control" placeholder="Enter PostId">
+          <input type="hidden" name="post_id" class="form-control" placeholder="Enter PostId" value="{{ucfirst($data->id) }}">
         </div>
         <button type="button" class="btn btn-danger" onclick="self.history.back();">Back</button>
         <button type="submit" class="btn btn-primary">Submit</button>
