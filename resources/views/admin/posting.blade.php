@@ -35,7 +35,7 @@
                                     @foreach($post as $posts)
                                      <tr>
                                          <td class="col-md-1 ">
-                                            <input type="checkbox" name="checkbox[]" value="{{$posts->id}}">
+                                            <input type="checkbox" name="checkbox[]" value="{{$posts->id}}" class="checkboxes">
                                          </td>
                                          <td class="col-md-8">
                                              <p>{{$posts->title}}</p>

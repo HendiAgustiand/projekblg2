@@ -13,8 +13,9 @@
 
 Route::resource('/', 'VisitorController');
 
-Route::get('/post/{id2}', 'VisitorController@showPage');
+Route::get('/post/{id}', 'VisitorController@showPage');
 Route::get('/post/delete/{id}', 'VisitorController@delete')->name('post.delete');
+
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
@@ -26,6 +27,7 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 	Route::post('/comment/delete','CommentController@destroyall1');
 	Route::get('/readMore/showComment','CommentController@showComment')->name('readmore');
 	Route::get('/news', 'VisitorController@news');
+
 });
 
 

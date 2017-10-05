@@ -14,17 +14,19 @@
 
 
     <!-- Bootstrap Core CSS -->
+    
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    
 
     <!-- MetisMenu CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet">
-
+    
     <!-- Custom Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+@yield('style-css')
 </head>
 
 <body>
